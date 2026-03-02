@@ -28,6 +28,9 @@
             min-height: 100vh;
             overflow: hidden;
             color: white;
+            user-select: none;
+            -webkit-user-select: none;
+            overscroll-behavior: none;
         }
 
         /* Animated Background */
@@ -93,6 +96,7 @@
             display: grid;
             grid-template-columns: 1fr 380px;
             height: 100vh;
+            height: 100dvh;
             gap: 20px;
             padding: 20px;
         }
@@ -151,6 +155,8 @@
             position: relative;
             cursor: pointer;
             transition: transform 0.1s ease;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .crystal-wrapper:active {
@@ -516,7 +522,27 @@
         @media (max-width: 900px) {
             .game-container {
                 grid-template-columns: 1fr;
-                grid-template-rows: 1fr 1fr;
+                grid-template-rows: auto 1fr;
+            }
+
+            .crystal-area {
+                padding: 10px 0;
+            }
+
+            .stats-display {
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: none;
+                margin-bottom: 15px;
+            }
+
+            .multiplier-display {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                transform: none;
+                margin-top: 15px;
             }
             
             .crystal {
